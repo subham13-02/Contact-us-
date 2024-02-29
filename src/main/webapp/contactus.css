@@ -33,7 +33,7 @@ input[type="text"], input[type="email"], textarea {
 }
 
  button[type="submit"],input[type="submit"] {
-    background-color: #007bff;
+    background-color: #FF6E33;
     color: white;
     padding: 10px 20px;
     border: none;

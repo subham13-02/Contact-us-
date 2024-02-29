@@ -25,7 +25,7 @@
 
                 <button type="submit">SUBMIT</button>
             </form>
-            <form action="login.jsp" method="post" >
+            <form action="login.jsp" >
             	<button type="submit" class="adminLogin">Admin Login</button>
             </form>
         </div>
