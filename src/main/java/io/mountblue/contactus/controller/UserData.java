@@ -17,13 +17,10 @@ public class UserData extends HttpServlet {
 		String name=request.getParameter("name");
 		String email=request.getParameter("email");
 		String message=request.getParameter("message");
-		
 		User user =new User();
-		
 		user.setName(name);
 		user.setMail(email);
 		user.setMessage(message);
-		
 		UsersDao userDao=new UsersDao();
 		
 		userDao.insertData(user);

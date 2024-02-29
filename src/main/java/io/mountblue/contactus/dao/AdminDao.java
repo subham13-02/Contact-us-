@@ -13,12 +13,10 @@ public class AdminDao {
 	    	Class.forName("org.postgresql.Driver");
 	        Connection connection = DriverManager.getConnection(url, username, password);
 	        PreparedStatement statement = connection.prepareStatement(sql);
-	        
 	        statement.setString(1,admin.getName());
 	        statement.setString(2,admin.getPassword());
 	        
 	        ResultSet resultSet = statement.executeQuery();
-	        
 	        return resultSet.next()?true:false;
 	    }
 	    catch( Exception e) {

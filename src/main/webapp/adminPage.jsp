@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@page import="java.sql.*" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
 <!DOCTYPE html>
@@ -16,17 +16,10 @@
 </style>
 </head>
 <body>
-     
-    <%
-	     //if(session.getAttribute("adminName")==null){
-	    	// response.sendRedirect("login.jsp");
-	     //}
-    %>
+	<sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/contact-us?characterEncoding=utf8" user="postgres" password="postgres" />
+    <sql:query var="rs" dataSource="${db}">select * from usersData </sql:query>
     
-    <sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/contact-us?characterEncoding=utf8" user="postgres" password="postgres" />
-     
-     <sql:query var="rs" dataSource="${db}">select * from usersData </sql:query>
-     <h1>Admin Page</h1>
+    <h1>Admin Page</h1>
     <table border="1" style="border-collapse: collapse;">
         <thead>
             <tr>
@@ -55,6 +48,5 @@
      </c:forEach>
      </tbody>
      </table>
-
 </body>
 </html>

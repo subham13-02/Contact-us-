@@ -12,7 +12,6 @@
         <div class="container">
             <h1>Contact Us</h1>
             <p>Please fill this form in a decent manner</p>
-
             <form action="insertData" method="post">
                 <label for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="name" placeholder="Full Name" required>

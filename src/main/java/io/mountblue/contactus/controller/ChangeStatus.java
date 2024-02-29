@@ -9,16 +9,11 @@ import io.mountblue.contactus.dao.UsersDao;
 
 @WebServlet("/changeStatus")
 public class ChangeStatus extends HttpServlet {
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id= Integer.parseInt(request.getParameter("id"));
 		boolean currentStatus=Boolean.parseBoolean(request.getParameter("status"));
-		
 		UsersDao usersDao=new UsersDao();
-		
 		usersDao.changeStatus(id, !currentStatus);
-		
 		response.sendRedirect("adminPage.jsp");
 	}
-
 }

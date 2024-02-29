@@ -15,10 +15,8 @@ public class UsersDao {
 	    try {
 	    	Class.forName("org.postgresql.Driver");
 	    	String sql = "INSERT INTO usersData(name, email, message)  VALUES (?,?,?)";
-	    	
 	        Connection connection = DriverManager.getConnection(url, username, password);
 	        PreparedStatement statement = connection.prepareStatement(sql);	
-	        
 	        statement.setString(1,user.getName());
 	        statement.setString(2,user.getMail());
 	        statement.setString(3,user.getMessage());
@@ -34,13 +32,10 @@ public class UsersDao {
    	    try {
 	    	Class.forName("org.postgresql.Driver");
 	    	String sql = "UPDATE usersData set status=? where id=?";
-
 	        Connection connection = DriverManager.getConnection(url, username, password);
 	        PreparedStatement statement = connection.prepareStatement(sql);	
-	        
 	        statement.setBoolean(1,newStatus);
 	        statement.setInt(2,id);
-	        
 	        statement.executeUpdate();
 	    }
 	    catch( Exception e) {
