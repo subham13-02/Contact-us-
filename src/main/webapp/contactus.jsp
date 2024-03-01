@@ -19,6 +19,9 @@
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" placeholder="example@mountblue.com" required>
 
+				<label for="city">City</label>
+                <input type="text" id="age" name="city" placeholder="Bengaluru" required>
+                
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
 

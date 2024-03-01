@@ -14,7 +14,7 @@ public class UsersDao {
     public void insertData(User user) {
 	    try {
 	    	Class.forName("org.postgresql.Driver");
-	    	String sql = "INSERT INTO usersData(name, email, message)  VALUES (?,?,?)";
+	    	String sql = "INSERT INTO usersData(name, email, message, city)  VALUES (?,?,?,?)";
 	        Connection connection = DriverManager.getConnection(url, username, password);
 	        PreparedStatement statement = connection.prepareStatement(sql);	
 	        statement.setString(1,user.getName());

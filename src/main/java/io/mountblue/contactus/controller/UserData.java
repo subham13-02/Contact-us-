@@ -14,14 +14,14 @@ import io.mountblue.contactus.model.User;
 public class UserData extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name=request.getParameter("name");
-		String email=request.getParameter("email");
-		String message=request.getParameter("message");
-		User user =new User();
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String message = request.getParameter("message");
+		User user = new User();
 		user.setName(name);
 		user.setMail(email);
 		user.setMessage(message);
-		UsersDao userDao=new UsersDao();
+		UsersDao userDao = new UsersDao();
 		
 		userDao.insertData(user);
 		

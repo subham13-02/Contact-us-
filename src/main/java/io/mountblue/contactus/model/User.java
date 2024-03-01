@@ -32,7 +32,7 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "Admin [name=" + name + ", mail=" + mail + ", message=" + message + ", status=" + status + "]";
+		return "User [name=" + name + ", mail=" + mail + ", message=" + message + ", status=" + status +"]";
 	}
 	
 }
