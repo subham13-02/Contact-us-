@@ -1,10 +1,8 @@
 package io.mountblue.contactus.model;
 
-public class User {
+public class User{
 	private String name;
-	private String mail;
-	private String message;
-	private String status;
+	private String password;
 	
 	public String getName() {
 		return name;
@@ -12,27 +10,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMail() {
-		return mail;
+	public String getPassword() {
+		return password;
 	}
-	public void setMail(String mail) {
-		this.mail = mail;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", mail=" + mail + ", message=" + message + ", status=" + status +"]";
-	}
-	
 }

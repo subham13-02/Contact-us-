@@ -17,9 +17,6 @@
       		
        		<input type="submit" value="Login"><br>
    		</form>
-   		<form action="contactus.jsp" >
-            <button type="submit">Contact us Page</button>
-        </form>
   	</div>
 </body>
 </html>

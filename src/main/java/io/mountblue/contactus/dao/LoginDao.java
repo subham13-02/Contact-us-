@@ -1,20 +1,20 @@
 package  io.mountblue.contactus.dao;
 import java.sql.*;
 
-import io.mountblue.contactus.model.Admin;
+import io.mountblue.contactus.model.User;
 
-public class AdminDao {
+public class LoginDao {
 	static String sql = "SELECT * from adminData where name=? and password=?";
 	static String url = "jdbc:postgresql://localhost:5432/contact-us";
     static String username = "postgres";
     static String password = "postgres";
-    public boolean check(Admin admin) {
+    public boolean check(User user) {
 	    try {
 	    	Class.forName("org.postgresql.Driver");
 	        Connection connection = DriverManager.getConnection(url, username, password);
 	        PreparedStatement statement = connection.prepareStatement(sql);
-	        statement.setString(1,admin.getName());
-	        statement.setString(2,admin.getPassword());
+	        statement.setString(1,user.getName());
+	        statement.setString(2,user.getPassword());
 	        
 	        ResultSet resultSet = statement.executeQuery();
 	        return resultSet.next()?true:false;

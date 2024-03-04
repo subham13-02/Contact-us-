@@ -16,6 +16,12 @@
 </style>
 </head>
 <body>
+	<%
+		response.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
+		if(session.getAttribute("username")==null){
+			response.sendRedirect("login.jsp");
+		}
+	%>
 	<sql:setDataSource var="db" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/contact-us?characterEncoding=utf8" user="postgres" password="postgres" />
     <sql:query var="active" dataSource="${db}">select * from usersData where status=true</sql:query>
     <sql:query var="archived" dataSource="${db}">select * from usersData where status=false</sql:query>
@@ -79,5 +85,8 @@
 		     </c:forEach>
      	</tbody>
      </table>
+     <form action="logout" method="post">
+			<input type="submit" value="Logout">
+	</form>
 </body>
 </html>
