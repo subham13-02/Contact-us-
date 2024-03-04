@@ -1,6 +1,7 @@
 package io.mountblue.contactus.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,11 +25,15 @@ public class ContactUsServlet extends HttpServlet {
 		String message = request.getParameter("message");
 		Request requests = new Request();
 		requests.setName(name);
-		requests.setMail(email);
+		requests.setEmail(email);
 		requests.setMessage(message);
+		requests.setStatus(true);
 		RequestDao requestDao = new RequestDao();
-		requestDao.insertData(requests);
+		requestDao.saveRequest(requests);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("contactUs.jsp");
-		requestDispatcher.forward(request, response);
+		response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<h1 style='color:green; text-align:center'>Data added successfully!</h1>");
+        requestDispatcher.include(request, response);
 	}
 }

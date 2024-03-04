@@ -9,11 +9,11 @@
 	<div class="container">
     	<h1>Login Here</h1>
 		<form action="login" method="post">
-			<label for="fullname">Full Name</label>
-       		<input type="text" name="name" placeholder="Enter ID"><br>
+			<label for="fullname">Admin Name</label>
+       		<input type="text" name="name" placeholder="Name"><br>
        		
        		<label for="password">Password</label>
-      		<input type="password" name="pass" placeholder="Enter Password"><br>
+      		<input type="password" name="pass" placeholder="Password"><br>
       		
        		<input type="submit" value="Login"><br>
    		</form>

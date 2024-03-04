@@ -1,6 +1,7 @@
 package io.mountblue.contactus.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,8 +30,11 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("username",name);
 			response.sendRedirect("dashboard");
 		}else{
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
-			requestDispatcher.forward(request, response);
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("<h1 style = 'color:red; text-align:center'>Enter the valid id & password!</h1>");
+            rd.include(request, response);
 		}
 	}
 }
